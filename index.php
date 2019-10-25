@@ -14,8 +14,8 @@
 
 	$encodeJson = json_encode($messages);
 
-	$LINEDatas['url'] = "https://api.line.me/v2/bot/message/reply";
-  	$LINEDatas['token'] = "<YOUR-CHANNEL-ACCESS-TOKEN>";
+	$LINEDatas['url'] = "https://line-chat-bot-001.herokuapp.com";
+  	$LINEDatas['token'] = "rSCfWj+EcxuJaBQ4jtTT/6qtnxioplZDTQoojVYv6MqApWF2Zv+vZBMIF8OKBnivoRrmwB0Xo5yrZreVwQNdlWjnK+ogHecvXfyYxnIlA5VVFDJaihXPBh3GCxXIQ7vCV0wGW6Vtm2fNKs8yWEhhGwdB04t89/1O/w1cDnyilFU=";
 
   	$results = sentMessage($encodeJson,$LINEDatas);
 
