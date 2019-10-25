@@ -55,7 +55,7 @@
         replyMsg($arrayHeader,$arrayPostData);
     }
 //////////////////////////////////////////////////////////////////
-else if($message == "test") 
+else if($message == "test") {
 const functions = require("firebase-functions");
 const request = require("request-promise");
 
@@ -86,7 +86,7 @@ const reply = req => {
     })
   });
 };
-/*
+
 const postToDialogflow = req => {
   req.headers.host = "bots.dialogflow.com";
   return request.post({
@@ -95,8 +95,8 @@ const postToDialogflow = req => {
     body: JSON.stringify(req.body)
   });
 };
-*/
 
+}
 //////////////////////////////////////////////////////////////////
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
