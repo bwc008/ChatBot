@@ -86,7 +86,7 @@ const reply = req => {
     })
   });
 };
-
+/*
 const postToDialogflow = req => {
   req.headers.host = "bots.dialogflow.com";
   return request.post({
@@ -95,7 +95,7 @@ const postToDialogflow = req => {
     body: JSON.stringify(req.body)
   });
 };
-
+*/
 
 //////////////////////////////////////////////////////////////////
 function replyMsg($arrayHeader,$arrayPostData){
