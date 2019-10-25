@@ -55,48 +55,6 @@
         replyMsg($arrayHeader,$arrayPostData);
     }
 //////////////////////////////////////////////////////////////////
-else if($message == "test") {
-const functions = require("firebase-functions");
-const request = require("request-promise");
-
-exports.LineAdapter = functions.https.onRequest((req, res) => {
-  if (req.method === "POST") {
-    let event = req.body.events[0]
-    if (event.type === "message" && event.message.type === "text") {
-      postToDialogflow(req);
-    } else {
-      reply(req);
-    }
-  }
-  return res.status(200).send(req.method);
-});
-
-const reply = req => {
-  return request.post({
-    uri: `${LINE_MESSAGING_API}/reply`,
-    headers: LINE_HEADER,
-    body: JSON.stringify({
-      replyToken: req.body.events[0].replyToken,
-      messages: [
-        {
-          type: "text",
-          text: JSON.stringify(req.body)
-        }
-      ]
-    })
-  });
-};
-
-const postToDialogflow = req => {
-  req.headers.host = "bots.dialogflow.com";
-  return request.post({
-    uri: "https://bots.dialogflow.com/line/<Your-Agent-ID>/webhook",
-    headers: req.headers,
-    body: JSON.stringify(req.body)
-  });
-};
-
-}
 //////////////////////////////////////////////////////////////////
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
