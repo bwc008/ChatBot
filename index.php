@@ -26,7 +26,8 @@
     }
     #ตัวอย่าง Message Type "Image"
     else if($message == "รูปน้องแมว"){
-        $image_url = "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg";
+      //  $image_url = "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg";
+  $image_url = "https://www.honestdocs.co/system/image_attachments/images/000/006/365/original/iStock-468382096_%281%29.jpg";
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "image";
         $arrayPostData['messages'][0]['originalContentUrl'] = $image_url;
@@ -50,10 +51,6 @@
         $arrayPostData['messages'][0]['text'] = "อย่าทิ้งกันไป";
         $arrayPostData['messages'][1]['type'] = "sticker";
         $arrayPostData['messages'][1]['packageId'] = "1";
-        $arrayPostData['messages'][1]['stickerId'] = "131";
-
-        $arrayPostData['messages'][1]['type'] = "sticker";
-        $arrayPostData['messages'][1]['packageId'] = "2";
         $arrayPostData['messages'][1]['stickerId'] = "131";
         replyMsg($arrayHeader,$arrayPostData);
     }
